@@ -1,0 +1,47 @@
+<%= form_with(model: tutor, local: true) do |form| %>
+  <% if tutor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(tutor.errors.count, "error") %> prohibited this tutor from being saved:</h2>
+
+      <ul>
+        <% tutor.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tutorID %>
+    <%#= form.text_field :lessonID %>
+    <%= form.text_field :tutorID, id: :tutorID, :type => "text"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :tutor_name %>
+    <%#= form.text_field :tutor_name %>
+    <%= form.text_field :tutor_name, id: :tutor_name, :type =>"text" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tutor_desc %>
+    <%#= form.text_area :tutor_desc %>
+    <%= form.text_area :tutor_desc, id: :tutor_desc, :type =>"text" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tutor_category %>
+    <%#= form.text_field :tutor_category %>
+    <%= form.text_field :tutor_category, id: :tutor_category, :type =>"text" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url %>
+    <%#= form.text_field :image_url %>
+    <%= form.text_field :image_url, id: :tutor_image_url %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

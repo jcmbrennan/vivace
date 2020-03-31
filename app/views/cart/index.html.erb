@@ -1,0 +1,51 @@
+<h1>Cart</h1>
+
+<% if @cart.empty? %>
+<p>You have not added any lessons yet</p>
+<% end %>
+
+<p id="notice"><%=notice%></p>
+
+<div id="lessonsContainer">
+	<table id ="customers">
+		<%total = 0 %>
+		<% @cart.each do |id, quantity| %>
+
+		<% lesson = Lesson.find_by_id(id)%>
+
+		<tr>
+			<td>
+				<div class = "image">
+					<%= link_to (image_tag lesson.image_url, :style => "height:40px"), lesson %>
+
+				</div>
+
+			</td>
+
+			<td class = "title"><%= link_to lesson.lesson_title, lesson %></td>
+			<td><a href = "#">Remove from Cart</a></td>
+			<td class = "price"><%=number_to_currency(lesson.lesson_price, :unit =>"€")%></td>
+			
+		</tr>
+
+		<tr>
+
+			<% total += lesson.quantity*lesson.price %>
+
+		</tr>
+
+		<% end %>
+
+		<tr>
+
+			Grand Total: <%= number_to_currency(total, :unit => "€")%>
+
+		</tr>
+
+	</table>
+
+</div>
+
+
+
+

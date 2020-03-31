@@ -1,0 +1,59 @@
+<%= form_with(model: lesson, local: true) do |form| %>
+  <% if lesson.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(lesson.errors.count, "error") %> prohibited this lesson from being saved:</h2>
+
+      <ul>
+        <% lesson.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :lessonID %>
+    <%#= form.text_field :lessonID %>
+    <%= form.text_field :lessonID, id: :lessonID, :type => "text"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :lesson_title %>
+    <%#= form.text_field :lesson_title %>
+    <%= form.text_field :lesson_title, id: :lesson_title, :type => "text"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :lesson_desc %>
+    <%#= form.text_area :lesson_desc %>
+    <%= form.text_field :lesson_desc, id: :lesson_desc, :type => "text"%>
+  </div>
+
+  <div class="field">
+    <%= form.label :lesson_price %>
+    <%#= form.text_field :lesson_price %>
+    <%= form.text_field :lesson_price, id: :lesson_price, :type =>"text" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image_url %>
+    <%#= form.text_field :image_url %>
+    <%= form.text_field :image_url, id: :lesson_image_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lesson_category %>
+    <%#= form.text_field :lesson_category %>
+    <%= form.text_field :lesson_category, id: :lesson_category, :type =>"text" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lesson_level %>
+    <%#= form.text_field :lesson_level %>
+    <%= form.text_field :lesson_level, id: :lesson_level, :type =>"text" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

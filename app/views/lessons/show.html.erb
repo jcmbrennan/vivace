@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lessonid:</strong>
+  <%= @lesson.lessonID %>
+</p>
+
+<p>
+  <strong>Lesson title:</strong>
+  <%= @lesson.lesson_title %>
+</p>
+
+<p>
+  <strong>Lesson desc:</strong>
+  <%= @lesson.lesson_desc %>
+</p>
+
+<p>
+  <strong>Lesson price:</strong>
+  <%= @lesson.lesson_price %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @lesson.image_url %>
+</p>
+
+<p>
+  <strong>Lesson category:</strong>
+  <%= @lesson.lesson_category %>
+</p>
+
+<p>
+  <strong>Lesson level:</strong>
+  <%= @lesson.lesson_level %>
+</p>
+
+<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<%= link_to 'Back', lessons_path %>
