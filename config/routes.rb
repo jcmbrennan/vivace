@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
 
-  devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'}
+  
+  devise_for :users, path: '', path_names: {sign_in: 'login', sign_out: 'logout', sign_up: 'register'} do
+  	resources :orders
+  	end
+  	
   get 'cart/index'
+
   resources :tutors
+
   resources :lessons
+
+  resources :orders do
+  	resources:orderlessons
+  end
+
 root 'static_pages#home'
 
 get '/about' => 'static_pages#about'
