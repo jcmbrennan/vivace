@@ -87,6 +87,36 @@ class CartController < ApplicationController
 
   end
   
+  def createOrder
+    @user = User.find(current_user.id)
+
+    @order = @user.orders.build(:order_date => DateTime.now, :status => 'Pending')
+
+    @order.save
+
+    @cart = session[:cart] || {} #get the content of the cart
+
+    @cart.each do |id, quantity|
+
+      lesson = lesson.find_by_id(id)
+
+    #note that the following may need to change (as well as the orderlesson table) to align with the field names on the lessons table  
+    @orderlesson = @order.orderlessons.build(:lesson_id => lesson.id, :title => lesson.title, :description => lesson.description, :quantity => quantity, :price => lesson.price)
+    
+    @orderlesson.save
+
+
+    @orders = Order.last
+
+    @orderlessons = orderlesson.where(order_id: Order.last)
+
+    session[:cart] = nil
+
+  end  
+
+  
+
+  end
 
 end
 

@@ -1,0 +1,42 @@
+<div id = "lessonsContainer"><h1> Thank You <br>
+	 Your booking was successful. Please take note of your order reference number below <%=@orderReg.id %> </h1>
+
+	 <table id = "customers">
+	 	<tr>
+	 		<% @orders.id do |order| %>
+
+	 		<td>Order reference for the order you just placed <%= orders.id %></td>
+	 		<% end %>
+	 	</tr>
+	 </table>
+
+
+	 <table id = "customers"
+	 <% @total = 0 %>
+	 <% @orderlessons.each do |id, quantity| %>
+	 
+		<tr>
+	 		<% lesson = Orderlesson.find_by_id(id) %>
+	 		<td><%= lesson.title %></td>
+	 		<td><%= lesson.quantity %></td>
+	 		<td><%= number_to_currency(lesson.price, :unit => "€") %></td>
+	 		<td><%= number_to_currency(lesson.quantity * lesson.price, :unit => "€") %></td>
+		</tr>
+
+
+	 	<tr>
+
+	 	<% timx = (lesson.quantity * lesson.price)%>
+
+	 	<% @total += timx %>
+		</tr>
+
+		<% end %>
+
+		<tr>
+
+			<td>Order Total: &euro; <%= @total%></td>
+
+		</tr>
+
+	</table>
