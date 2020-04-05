@@ -1,1 +1,33 @@
-<%=render 'layouts/categories' %>
+<p id="notice"><%= notice %></p>
+<div id="lessonsContainer">
+<h1>Lessons</h1>
+<% if @lessons.length == 0  %>
+<br />
+<h2>There are currently no lessons available in this category</h2>
+<% end %>
+
+    <% @lessons.each do |Lessons| %>
+      <div class="lessonhols">
+        <h1><%= lesson.title %></h1>
+        <%= link_to (image_tag lesson.image_url, :class=>"lessonholsIm"), lesson %>
+       <p><%= lesson.description %>
+       </p>
+       <p><%= lesson.price %>
+        <br>
+        <%= lesson.category %>
+        </p>
+        <p>        
+         
+          <a href="/cart/<%= lesson.id %>" class="button">Add to Cart</a>  
+          <%= link_to 'Show', lesson, :class =>"button", :role=>"button" %>
+        
+
+        <% if session[:login] == 1 %> 
+        <%= link_to 'Edit', edit_lesson_path(item), :class =>"button", :role=>"button" %>
+        <%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' }, :class =>"button",           :role=>"button" %>
+        
+        <% end %>
+        </p>
+     </div>
+    <% end %>
+  <br>
