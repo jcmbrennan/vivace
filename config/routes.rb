@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   	resources:orderlessons
   end
 
+  resources :categories
+
 root 'static_pages#home'
 
 get '/about' => 'static_pages#about'
@@ -53,7 +55,7 @@ post '/search' => 'lessons#search'
   
 get '/search' => 'static_pages#searchproducts'
   
-get 'category/:title', to: 'static_pages#category'
+get 'category/:title', to: 'static_pages#categories'
   
 get '/bag/:id', to: 'cart#bag'
  # get 'static_pages/home'
