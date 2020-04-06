@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_05_150208) do
+ActiveRecord::Schema.define(version: 2020_04_06_111526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,15 +24,17 @@ ActiveRecord::Schema.define(version: 2020_04_05_150208) do
   end
 
   create_table "lessons", force: :cascade do |t|
-    t.string "lessonID"
-    t.string "lesson_title"
-    t.text "lesson_desc"
-    t.decimal "lesson_price"
+    t.string "title"
+    t.text "desc"
+    t.decimal "price"
     t.string "image_url"
-    t.string "lesson_category"
-    t.string "lesson_level"
+    t.string "category"
+    t.string "level"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.date "start_date"
+    t.integer "duration"
+    t.string "tutor_name"
   end
 
   create_table "orderlessons", force: :cascade do |t|

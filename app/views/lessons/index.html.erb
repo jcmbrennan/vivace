@@ -5,13 +5,15 @@
 <table>
   <thead>
     <tr>
-      <th>LessonID</th>
-      <th>Lesson title</th>
-      <th>Lesson desc</th>
-      <th>Lesson price</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Price</th>
       <th>Image url</th>
-      <th>Lesson category</th>
-      <th>Lesson level</th>
+      <th>Category</th>
+      <th>Level</th>
+      <th>Start Date</th>
+      <th>Duration (weeks)</th>
+      <th>Tutor Name</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,13 +21,15 @@
   <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
-        <td><%= lesson.lessonID %></td>
-        <td><%= lesson.lesson_title %></td>
-        <td><%= lesson.lesson_desc %></td>
-        <td><%= lesson.lesson_price %></td>
+        <td><%= lesson.title %></td>
+        <td><%= lesson.desc %></td>
+        <td><%= lesson.price %></td>
         <td><%= lesson.image_url %></td>
-        <td><%= lesson.lesson_category %></td>
-        <td><%= lesson.lesson_level %></td>
+        <td><%= lesson.category %></td>
+        <td><%= lesson.level %></td>
+        <td><%= lesson.start_date %></td>
+        <td><%= lesson.duration %></td>
+        <td><%= lesson.tutor_name %></td>
         <td><%= link_to 'Show', lesson %></td>
         <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
         <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>

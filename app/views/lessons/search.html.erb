@@ -15,12 +15,12 @@
        <h1><%= lesson.title %></h1>
        
        <%= link_to (image_tag lesson.image_url, :class => "lessonholsIm"), lesson %>
-        <p><%= lesson.description %></p>
+        <p>Description <%= lesson.desc %></p>
        <p>Price <%= number_to_currency(lesson.price, :unit => "€") %>
        <br>
         Category: <%= lesson.category %>
         <br>
-        Brand: <%= lesson.brand %></p>
+        
        
        <p>
          <%= link_to 'View',  lesson, :class => "button", :role => "button" %>
