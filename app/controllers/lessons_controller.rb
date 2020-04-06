@@ -17,6 +17,11 @@ class LessonsController < ApplicationController
     @lesson = Lesson.new
   end
 
+  def search
+     st = "%#{params[:q]}%"
+     @lessons = Lesson.where("title like ?", st)
+  end
+
   # GET /lessons/1/edit
   def edit
   end
