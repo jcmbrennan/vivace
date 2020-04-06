@@ -11,6 +11,20 @@ class StaticPagesController < ApplicationController
   def about
   end
 
+  def choosecategory
+    @orders = Order.all
+    @orderlessons = Orderlesson.all
+    @lessons = Lesson.all
+    
+    @categories = Category.all
+  end
+
+  def categories
+    catName = params[:title]
+    @lessons = Lesson.where("category like ?", catName) #might need to be changed to ("categories like ?, catName")
+  end
+
+
   def paid
     # redirect_to "/cart/clear"
     flash[:notice] = 'Transaction Complete'

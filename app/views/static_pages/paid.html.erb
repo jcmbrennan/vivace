@@ -1,0 +1,22 @@
+<h1 align="center">Thank you</h1>
+<h2 align="center">Your order has been placed</h2>
+<h3 align="center">Similar items recently bought</h3>
+<div id="lessonsContainer">
+  
+  
+     
+      <% @orderlessons.order(id: :desc).limit(4).each  do |orderlesson| %>
+      <div class="lessonhols">
+       <h1><%= orderlesson.title %></h1> 
+       <%= link_to (image_tag orderlesson.image_url, :class => "lessonholsIm"), @lesson %>
+       
+       <p><%= orderlesson.description %></p>
+       <a href="/items/<%= orderlesson.lesson_id %>" class="button">View Lesson</a>
+      
+        
+      </div>
+    <% end %>
+      
+
+
+<br>
