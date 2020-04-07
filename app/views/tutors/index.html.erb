@@ -23,8 +23,8 @@
         <td><%= tutor.tutor_category %></td>
         <td><%= tutor.image_url %></td>
         <td><%= link_to 'Show', tutor %></td>
-        <td><%= link_to 'Edit', edit_tutor_path(tutor) %></td>
-        <td><%= link_to 'Destroy', tutor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_tutor_path(tutor) if logged_in?(:site_admin)%></td>
+        <td><%= link_to 'Destroy', tutor, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)%></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Tutor', new_tutor_path %>
+<%= link_to 'New Tutor', new_tutor_path if logged_in?(:site_admin)%>
