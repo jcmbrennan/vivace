@@ -1,5 +1,6 @@
 class TutorsController < ApplicationController
   before_action :set_tutor, only: [:show, :edit, :update, :destroy]
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   # GET /tutors
   # GET /tutors.json

@@ -1,23 +1,18 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Lessonid:</strong>
-  <%= @lesson.lessonID %>
-</p>
-
-<p>
   <strong>Lesson title:</strong>
-  <%= @lesson.lesson_title %>
+  <%= @lesson.title %>
 </p>
 
 <p>
-  <strong>Lesson desc:</strong>
-  <%= @lesson.lesson_desc %>
+  <strong>Description:</strong>
+  <%= @lesson.desc %>
 </p>
 
 <p>
-  <strong>Lesson price:</strong>
-  <%= @lesson.lesson_price %>
+  <strong>Price:</strong>
+  <%= @lesson.price %>
 </p>
 
 <p>
@@ -26,14 +21,31 @@
 </p>
 
 <p>
-  <strong>Lesson category:</strong>
-  <%= @lesson.lesson_category %>
+  <strong>Category:</strong>
+  <%= @lesson.category %>
 </p>
 
 <p>
-  <strong>Lesson level:</strong>
-  <%= @lesson.lesson_level %>
+  <strong>Level:</strong>
+  <%= @lesson.level %>
 </p>
 
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<p>
+  <strong>Start Date:</strong>
+  <%= @lesson.start_date %>
+</p>
+
+<p>
+  <strong>Duration (in weeks):</strong>
+  <%= @lesson.duration %>
+</p>
+
+<p>
+  <strong>Tutor:</strong>
+  <%= @lesson.tutor_name %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_lesson_path(@lesson) if logged_in?(:site_admin) %> |
 <%= link_to 'Back', lessons_path %>

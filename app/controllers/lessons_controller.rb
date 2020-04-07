@@ -1,6 +1,8 @@
 class LessonsController < ApplicationController
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
 
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
+
   # GET /lessons
   # GET /lessons.json
   def index
