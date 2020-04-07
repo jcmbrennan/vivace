@@ -25,9 +25,9 @@ get '/lessons' => 'static_pages#lessons'
 
 get '/tutors' => 'static_pages#tutors'
 
-get '/login' => 'user#login'
+#get '/login' => 'user#login'
 
-get '/logout' => 'user#logout'
+#get '/logout' => 'user#logout'
 
 get '/cart', to: 'cart#index'
   
