@@ -7,11 +7,13 @@ class LessonsController < ApplicationController
   # GET /lessons.json
   def index
     @lessons = Lesson.all
+    @page_title = "Our lessons"
   end
 
   # GET /lessons/1
   # GET /lessons/1.json
   def show
+    @page_title = "Our lessons"
   end
 
   # GET /lessons/new

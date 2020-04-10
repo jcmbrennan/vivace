@@ -6,11 +6,13 @@ class TutorsController < ApplicationController
   # GET /tutors.json
   def index
     @tutors = Tutor.all
+    @page_title = "Our tutors"
   end
 
   # GET /tutors/1
   # GET /tutors/1.json
   def show
+    @page_title = "Our tutors"
   end
 
   # GET /tutors/new
