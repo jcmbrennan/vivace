@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<header class = "headSec">
+
+<h1><%=@page_title%> </h1>
+<meta name = "keywords" content="<%=@seo_keywords %>"/>
+<%= stylesheet_pack_tag 'lessons', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+</header>
+
+<body>  
+  
+
+
+ <%= login_helper %>
+
+<div class="container">
+  <%= yield %>
+
+  <div>
+    <div><%= link_to "Home", "/" %></div>
+    <div><%= link_to "About", about_path %></div>
+    <div><%= link_to "Lessons", lessons_path %></div>
+    <div><%= link_to "Tutors", tutors_path %></div>
+    
+  </div>
+</div>
+
+<footer class="foot">
+  
+
+</footer>
+</body>
+</html>
