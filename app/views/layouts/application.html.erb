@@ -7,10 +7,12 @@
 <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 <meta name = "keywords" content="<%=@seo_keywords %>"/>
+
+
 </header>
 
 <body>  
-  
+  <%= csrf_meta_tags %>
   <%=render "shared/nav", location: 'top' %>
 
 

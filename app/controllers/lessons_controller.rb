@@ -63,11 +63,22 @@ class LessonsController < ApplicationController
 
   # DELETE /lessons/1
   # DELETE /lessons/1.json
+  #def destroy
+   # @lesson.destroy
+    #  respond_to do |format|
+     # format.html { redirect_to lessons_url, notice: 'Lesson was successfully destroyed.' }
+      #format.json { head :no_content }
+    #end
+  #end
+
   def destroy
+    #perform the lookup
+    @lesson = Lesson.find(params[:id])
+    #Destroy/delete the record
     @lesson.destroy
+    #Redirect
     respond_to do |format|
-      format.html { redirect_to lessons_url, notice: 'Lesson was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html {redirect_to lessons_url, notice: 'Lesson was successfully removed.'}
     end
   end
 
