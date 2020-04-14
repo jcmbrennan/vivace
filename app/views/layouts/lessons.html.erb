@@ -4,21 +4,23 @@
 <header class = "headSec">
 
 <h1><%=@page_title%> </h1>
-<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 <meta name = "keywords" content="<%=@seo_keywords %>"/>
+<%= stylesheet_pack_tag 'lessons', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 </header>
 
 <body>  
   
-  <%=render "shared/nav", location: 'top' %>
-
 
 
  <%= login_helper %>
 
 <div class="container">
   <%= yield %>
+
+  <%=render "shared/nav", location: 'top' %>
+
 </div>
 
 <footer class="foot">

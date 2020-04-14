@@ -1,16 +1,21 @@
 class TutorsController < ApplicationController
   before_action :set_tutor, only: [:show, :edit, :update, :destroy]
+  
+  layout "lessons"
+
   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   # GET /tutors
   # GET /tutors.json
   def index
     @tutors = Tutor.all
+    @page_title = "Our tutors"
   end
 
   # GET /tutors/1
   # GET /tutors/1.json
   def show
+    @page_title = "Our tutors"
   end
 
   # GET /tutors/new
