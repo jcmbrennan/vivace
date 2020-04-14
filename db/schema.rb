@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_06_215826) do
+ActiveRecord::Schema.define(version: 2020_04_14_115915) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -59,10 +59,9 @@ ActiveRecord::Schema.define(version: 2020_04_06_215826) do
   end
 
   create_table "tutors", force: :cascade do |t|
-    t.string "tutorID"
-    t.string "tutor_name"
-    t.text "tutor_desc"
-    t.string "tutor_category"
+    t.string "name"
+    t.text "desc"
+    t.string "category"
     t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
