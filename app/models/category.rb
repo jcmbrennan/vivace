@@ -1,4 +1,5 @@
 class Category < ApplicationRecord
-	validates_presence_of
-	:title, :image
+	validates_presence_of :title, :image
+
+	has_many :lessons
 end

@@ -12,8 +12,6 @@
   <% end %>
 
   
-
-
   <div class="field">
     <%= form.label :title %>
     <%#= form.text_field :lesson_title %>
@@ -39,9 +37,16 @@
   </div>
 
   <div class="field">
-    <%= form.label :category %>
+    <%= form.label :category_id %>
     <%#= form.text_field :lesson_category %>
-    <%= form.text_field :category, id: :category, :type =>"text" %>
+    <%= form.text_field :category_id, id: :category_id, :type =>"text" %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :category_name %>
+    <%#= form.text_field :lesson_category %>
+    <%= form.text_field :category_name, id: :category_name, :type =>"text" %>
   </div>
 
   <div class="field">
