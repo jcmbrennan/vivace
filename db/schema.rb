@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_120524) do
+ActiveRecord::Schema.define(version: 2020_04_15_213142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,9 @@ ActiveRecord::Schema.define(version: 2020_04_15_120524) do
     t.integer "duration"
     t.string "tutor_name"
     t.bigint "category_id"
+    t.bigint "tutor_id"
     t.index ["category_id"], name: "index_lessons_on_category_id"
+    t.index ["tutor_id"], name: "index_lessons_on_tutor_id"
   end
 
   create_table "orderlessons", force: :cascade do |t|
@@ -84,6 +86,7 @@ ActiveRecord::Schema.define(version: 2020_04_15_120524) do
   end
 
   add_foreign_key "lessons", "categories"
+  add_foreign_key "lessons", "tutors"
   add_foreign_key "orderlessons", "orders"
   add_foreign_key "orders", "users"
 end
