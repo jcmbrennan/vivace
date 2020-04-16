@@ -3,6 +3,9 @@ class Lesson < ApplicationRecord
 
 	belongs_to :category
 
+	extend FriendlyId
+	friendly_id :title, use: :slugged
+
 	after_initialize :set_defaults
 
 	def set_defaults

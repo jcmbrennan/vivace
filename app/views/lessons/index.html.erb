@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
+      <th>Image url</th>
       <th>Title</th>
       <th>Description</th>
-      <th>Price</th>
-      <th>Image url</th>
+      <th>Price</th>      
       <th>Category</th>
       <th>Level</th>
       <th>Start Date</th>
@@ -21,10 +21,10 @@
   <tbody>
     <% @lessons.each do |lesson| %>
       <tr>
+        <td><%= image_tag lesson.image_url %></td>
         <td><%= lesson.title %></td>
         <td><%= lesson.desc %></td>
-        <td><%= lesson.price %></td>
-        <td><%= lesson.image_url %></td>
+        <td><%= lesson.price %></td>        
         <td><%= lesson.category_name %></td>
         <td><%= lesson.level %></td>
         <td><%= lesson.start_date %></td>
