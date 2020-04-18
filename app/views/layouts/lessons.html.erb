@@ -14,18 +14,16 @@
   
 <%= csrf_meta_tags %>
 
- <%= login_helper %>
 
 <div class="container">
-  <%= yield %>
 
-  <%=render "shared/nav", location: 'top' %>
+ <%=render "shared/application_nav" %>
+
+ <%= yield %>
+
+  
 
 </div>
 
-<footer class="foot">
-  
-
-</footer>
 </body>
 </html>
