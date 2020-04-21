@@ -1,8 +1,33 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Tutors</h1>
+<div class="album py-5 bg-light">
+    <div class="container">
 
-<table>
+      <div class="row">
+        <% @tutors.each do |tutor| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <%= link_to (image_tag tutor.image_url unless tutor.image_url.nil?), tutor %>
+            <div class="card-body">
+              <p class="card-text">
+                <span><%link_to (tutor.name), tutor%></span><p><%=tutor.name %></p> <p>Courses taught: <%=tutor.category %></p>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted"></small>
+              </div>
+            </div>
+          </div>
+        </div>
+       <% end %>
+      </div>
+    </div>
+  </div>
+
+<!--<table>
   <thead>
     <tr>
       <th>Name</th>
@@ -14,20 +39,20 @@
   </thead>
 
   <tbody>
-    <% @tutors.each do |tutor| %>
+    <% #@tutors.each do |tutor| %>
       <tr>
-        <td><%= tutor.name %></td>
-        <td><%= tutor.desc %></td>
-        <td><%= tutor.category %></td>
-        <td><%= tutor.image_url %></td>
-        <td><%= link_to 'Show', tutor %></td>
-        <td><%= link_to 'Edit', edit_tutor_path(tutor) if logged_in?(:site_admin)%></td>
-        <td><%= link_to 'Destroy', tutor, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)%></td>
+        <td><%#= tutor.name %></td>
+        <td><%#= tutor.desc %></td>
+        <td><%#= tutor.category %></td>
+        <td><%#= tutor.image_url %></td>
+        <td><%#= link_to 'Show', tutor %></td>
+        <td><%#= link_to 'Edit', edit_tutor_path(tutor) if logged_in?(:site_admin)%></td>
+        <td><%#= link_to 'Destroy', tutor, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)%></td>
       </tr>
-    <% end %>
+    <% #end %>
   </tbody>
 </table>
 
-<br>
+<br>-->
 
 <%= link_to 'New Tutor', new_tutor_path if logged_in?(:site_admin)%>
