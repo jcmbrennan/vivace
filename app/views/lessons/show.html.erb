@@ -1,4 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-7">
+      <%= image_tag @lesson.image_url %>
+    </div>
+
+    <div class = "col-md-5">
+
+      <h1><%= @lesson.title %></h1>
+      <hr>
+      <em><%= @lesson.desc %></em>
+      <hr>
+      <p><b>Price:</b> <%= @lesson.price %></p>
+      <hr>
+      <p><b>Category:</b> <%=@lesson.category_name %></p>
+      <hr>
+      <p><b>Level:</b> <%= @lesson.level %></p>
+      <hr>
+      <p><b>Course Start Date:</b> <%= @lesson.start_date %></p>
+      <hr>
+      <p><b>Course Duration (Weeks):</b> <%= @lesson.duration %></p>
+      <hr>
+      <p><b>Tutor Name: </b><%= @lesson.tutor_name %></p>
+      <hr>
+      <%=link_to "View all courses", lessons_path %> 
+      <%= link_to '| Edit', edit_lesson_path(@lesson) if logged_in?(:site_admin)%>
+    </div>
+  </div>
+</div>  
+
+<!--<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Course title:</strong>
@@ -43,9 +73,4 @@
 <p>
   <strong>Tutor:</strong>
   <%= @lesson.tutor_name %>
-</p>
-
-
-
-<%= link_to 'Edit', edit_lesson_path(@lesson) if logged_in?(:site_admin) %> |
-<%= link_to 'Back', lessons_path %>
+</p> -->

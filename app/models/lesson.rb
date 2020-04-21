@@ -2,6 +2,7 @@ class Lesson < ApplicationRecord
 	validates_presence_of :title, :price, :category_name, :start_date, :duration, :tutor_name
 
 	belongs_to :category
+	belongs_to :tutor
 
 	extend FriendlyId
 	friendly_id :title, use: :slugged

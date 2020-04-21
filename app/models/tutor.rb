@@ -1,6 +1,6 @@
 class Tutor < ApplicationRecord
 	validates_presence_of :name, :category
-	belongs_to :lesson
+	has_many :lessons
 
 	extend FriendlyId
 	friendly_id :name, use: :slugged
