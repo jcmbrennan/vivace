@@ -3,7 +3,7 @@
 
 <% if @lessons.length == 0  %>
 
-<h2>No lessons were found to match your search</h2>
+<h2>No courses were found to match your search</h2>
 <% end %>
 
  <div id="lessonsContainer">
@@ -29,7 +29,7 @@
 
        <% if user_signed_in? %>
          <% if current_user.admin? %>   
-<%= link_to 'New Lesson', new_lesson_path, :class =>"button", :role=>"button" %>
+<%= link_to 'New Course', new_lesson_path, :class =>"button", :role=>"button" %>
 <% end %>
   <% end %> 
           
