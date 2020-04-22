@@ -1,19 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-7">
+      <%= image_tag @category.image %>
+    </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @category.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @category.description %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @category.image %>
-</p>
-
-<%= link_to 'Edit', edit_category_path(@category) if logged_in?(:site_admin) %> |
-<%= link_to 'Back', categories_path %>
+    <div class = "col-md-5">
+      <h1><%= @category.title %></h1>
+      <hr>
+      <em><%= @category.description %></em>
+      <hr>
+      <%=link_to "View all course types", categories_path %> 
+      <%= link_to '| Edit', edit_category_path(@category) if logged_in?(:site_admin)%>      
+    </div>
+  </div>
+</div> 

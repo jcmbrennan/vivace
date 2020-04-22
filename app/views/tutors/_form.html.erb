@@ -11,31 +11,31 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :name %>
     <%#= form.text_field :tutor_name %>
-    <%= form.text_field :name, id: :name, :type =>"text" %>
+    <%= form.text_field :name, id: :name, :type =>"text", class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :desc %>
     <%#= form.text_area :tutor_desc %>
-    <%= form.text_area :desc, id: :desc, :type =>"text" %>
+    <%= form.text_area :desc, id: :desc, :type =>"text", class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :category %>
     <%#= form.text_field :tutor_category %>
-    <%= form.text_field :category, id: :category, :type =>"text" %>
+    <%= form.text_field :category, id: :category, :type =>"text", class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :image_url %>
     <%#= form.text_field :image_url %>
-    <%= form.text_field :image_url, id: :image_url %>
+    <%= form.text_field :image_url, id: :image_url, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit 'Save Tutor', class: 'btn btn-primary btn-block' %>
   </div>
 <% end %>

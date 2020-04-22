@@ -1,8 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Lessons</h1>
 
-<table>
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row">
+        <% @lessons.each do |lesson| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <%= link_to (image_tag lesson.image_url unless lesson.image_url.nil?), lesson %>
+            <div class="card-body">
+              <p class="card-text">
+                <span><%link_to lesson.title, lessons_path(lesson)%></span><p><%=lesson.title %></p> <p>Start Date: <%=lesson.start_date %></p>
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted"><%=lesson.tutor_name %></small>
+              </div>
+            </div>
+          </div>
+        </div>
+       <% end %>
+      </div>
+    </div>
+  </div>
+
+
+<!--<table>
   <thead>
     <tr>
       <th>Image url</th>
@@ -19,25 +47,25 @@
   </thead>
 
   <tbody>
-    <% @lessons.each do |lesson| %>
+    <%# @lessons.each do |lesson| %>
       <tr>
-        <td><%= image_tag lesson.image_url %></td>
-        <td><%= lesson.title %></td>
-        <td><%= lesson.desc %></td>
-        <td><%= lesson.price %></td>        
-        <td><%= lesson.category_name %></td>
-        <td><%= lesson.level %></td>
-        <td><%= lesson.start_date %></td>
-        <td><%= lesson.duration %></td>
-        <td><%= lesson.tutor_name %></td>
-        <td><%= link_to 'Show', lesson %></td>
-        <td><%= link_to 'Edit', edit_lesson_path(lesson) if logged_in?(:site_admin) %></td>
-        <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
+        <td><%#= image_tag lesson.image_url %></td>
+        <td><%#= lesson.title %></td>
+        <td><%#= lesson.desc %></td>
+        <td><%#= lesson.price %></td>        
+        <td><%#= lesson.category_name %></td>
+        <td><%#= lesson.level %></td>
+        <td><%#= lesson.start_date %></td>
+        <td><%#= lesson.duration %></td>
+        <td><%#= lesson.tutor_name %></td>
+        <td><%#= link_to 'Show', lesson %></td>
+        <td><%#= link_to 'Edit', edit_lesson_path(lesson) if logged_in?(:site_admin) %></td>
+        <td><%#= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
       </tr>
-    <% end %>
+    <% #end %>
   </tbody>
 </table>
 
-<br>
+<br>-->
 
-<%= link_to 'New Lesson', new_lesson_path if logged_in?(:site_admin)%>
+<%= link_to 'New Course', new_lesson_path if logged_in?(:site_admin)%>

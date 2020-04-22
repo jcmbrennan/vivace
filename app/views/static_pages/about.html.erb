@@ -1,11 +1,29 @@
 <%provide(:title, "About Vivace") %>
 
-<h1> Welcome <%=current_user.first_name %></h1>
+<h2>About Vivace</h2>
 
-<h1>About Vivace</h1>
-<p>Vivace allows you to
-	
-	<ul>Find a group lesson</ul>
-	<ul> Pay online</ul>
-	<ul>See a tutor's availability</ul>
-</p>
+<p>Vivace allows you to easily find a music instrument course, find out some information about it and the tutor delivering the course.  If you are interesting in attending one of our courses you can book and pay online. Then simply turn up on the evening of your course start date and enjoy learning your instrument in a friendly and welcoming environment.-</p>
+
+<p>All of our tutors have spent years playing in bands, orchestras, ensembles covering a myriad of genres.  You can find our more about our tutors on this site on <%= link_to "this page", tutors_path %></p>
+
+<!--<p>We are based in the centre of Dublin with plentiful public transport options. There is also a private parking garage nearby</p>-->
+<hr>
+<div class="row">
+  <div class="col-md-6">
+    <h5>Our address</h5>
+
+    <p>3A Mayor Street Upper, Spencer Dock, Dublin 1</p>
+
+    <h5>Phone</h5>
+
+    <p><%= number_to_phone "0868886632" %></p>
+
+    <h5>Email</h5>
+
+    <p><a href="mailto:jcbrennan@gmail.com?subject=VivaceContact" "email me">Email me</a> </p>
+  </div>
+
+  <div class="col-md-6">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.67556726897!2d-6.240511248904055!3d53.349063582111015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670ef2e498f9e1%3A0x88cbefc85d201cf2!2s3A%20Mayor%20Street%20Upper%2C%20North%20Wall%2C%20Dublin%201%2C%20D01%20PF72!5e0!3m2!1sen!2sie!4v1587249649322!5m2!1sen!2sie" width="300" height="250" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+  </div>
+</div>

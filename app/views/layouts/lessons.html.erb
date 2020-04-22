@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
 
-<header class = "headSec">
-
-<h1><%=@page_title%> </h1>
-<meta name = "keywords" content="<%=@seo_keywords %>"/>
-<%= stylesheet_pack_tag 'lessons', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-</header>
-
-<body>  
-  
+<head>
+<!--meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<title><%=@page_title%> </title>
 <%= csrf_meta_tags %>
+<meta name = "keywords" content="<%=@seo_keywords %>"/>
 
- <%= login_helper %>
+<%= stylesheet_pack_tag 'lessons', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'lessons', 'data-turbolinks-track': 'reload' %>
 
-<div class="container">
-  <%= yield %>
 
-  <%=render "shared/nav", location: 'top' %>
+</head>
 
-</div>
+	<body>  
 
-<footer class="foot">
-  
+	<%=render 'shared/lesson_nav' %>
 
-</footer>
-</body>
+	<%=render 'shared/lesson_masthead' unless logged_in?(:site_admin) %>
+
+
+	 <%= yield %>
+
+
+	<%=render 'shared/lesson_footer' %>
+
+
+	</body>
 </html>
