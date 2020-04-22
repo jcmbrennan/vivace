@@ -7,7 +7,7 @@ class LessonsController < ApplicationController
   # GET /lessons
   # GET /lessons.json
   def index
-    @lessons = Lesson.all
+    @lessons = Lesson.by_position
     @page_title = "Our lessons"
   end
 
