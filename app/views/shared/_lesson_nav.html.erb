@@ -9,10 +9,7 @@
 	        <div class="col-sm-4 offset-md-1 py-4">
 	          <h4 class="text-white">Explore</h4>
 	          <ul class="list-unstyled">
-	            <li><%= link_to "Home", "/", class: 'text-white' %></li>
-				<li><%= link_to "About", about_path, class: 'text-white' %></li>
-				<li><%= link_to "Lessons", lessons_path, class: 'text-white' %></li>
-				<li><%= link_to "Tutors", tutors_path, class: 'text-white' %></li>
+	            <%= nav_helper 'text-white', 'li' %>
 				<li><%= login_helper 'text-white' %></li>
 	          </ul>
 	        </div>
