@@ -7,6 +7,7 @@ module ApplicationHelper
 			(link_to "Login", new_user_session_path, class: style)
 		else
 			link_to "Logout", destroy_user_session_path, method: :get, class: style
+			
 		end
 	end
 
@@ -28,6 +29,10 @@ module ApplicationHelper
 			{
 				url: tutors_path,
 				title: 'Tutors'
+			},
+			{
+				url: cart_path,
+				title: 'Cart'
 			},
 		]
 	end

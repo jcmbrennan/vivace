@@ -8,7 +8,7 @@ class TutorsController < ApplicationController
   # GET /tutors
   # GET /tutors.json
   def index
-    @tutors = Tutor.all
+    @tutors = Tutor.by_position
     @page_title = "Our tutors"
   end
 

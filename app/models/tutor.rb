@@ -4,4 +4,8 @@ class Tutor < ApplicationRecord
 
 	extend FriendlyId
 	friendly_id :name, use: :slugged
+
+	def self.by_position
+		order("position ASC")
+	end
 end

@@ -22,6 +22,8 @@
       <hr>
       <p><b>Tutor Name: </b><%= @lesson.tutor_name %></p>
       <hr>
+      <p><a href="/cart/<%=@lesson.id%>" class="btn btn-secondary">Book this course</a></p>
+      <hr>
       <%=link_to "View all courses", lessons_path %> 
       <%= link_to '| Edit', edit_lesson_path(@lesson) if logged_in?(:site_admin)%>
     </div>

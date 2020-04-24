@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_16_215529) do
+ActiveRecord::Schema.define(version: 2020_04_22_202647) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_215529) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.integer "position"
     t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_215529) do
     t.bigint "category_id"
     t.bigint "tutor_id"
     t.string "slug"
+    t.integer "position"
     t.index ["category_id"], name: "index_lessons_on_category_id"
     t.index ["tutor_id"], name: "index_lessons_on_tutor_id"
   end
@@ -61,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_215529) do
     t.text "description"
     t.integer "quantity"
     t.decimal "price"
-    t.bigint "order_id", null: false
+    t.bigint "order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_orderlessons_on_order_id"
@@ -84,6 +86,7 @@ ActiveRecord::Schema.define(version: 2020_04_16_215529) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.integer "position"
     t.index ["slug"], name: "index_tutors_on_slug", unique: true
   end
 

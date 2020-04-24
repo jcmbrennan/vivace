@@ -1,0 +1,71 @@
+<h1>Cart</h1>
+
+<% if @cart.empty? %>
+<p>You have not added any courses yet</p>
+<% end %>
+
+<p id="notice"><%=notice%></p>
+
+<div id="lessonsContainer">
+	<table id ="customers">
+		<%total = 0 %>
+		<% @cart.each do |id, quantity| %>
+
+		<% lesson = Lesson.find_by_id(id)%>
+		
+		<% timx = (quantity*lesson.price)%>
+
+		<%total +=quantity*lesson.price%>
+
+		<%timx = timx %>
+
+		<tr>
+			<td>
+				<div class = "image">
+					<%= link_to (image_tag lesson.image_url unless lesson.image_url.nil?), lesson %>
+
+				</div>
+
+			</td>
+
+			<td class = "title"><%= link_to lesson.title, lesson %></td>
+			<td><a href = "/cart/remove/<%= lesson.id %>">Remove from Cart</a></td>
+			<td class = "price"><%=number_to_currency(lesson.price, :unit =>"€")%></td>
+			<td class = "quantity"><%=quantity%></td>
+			<td class = "price"><%= number_to_currency(quantity*lesson.price, :unit =>"€") %></td>
+
+			
+			
+		</tr>
+
+		<tr>
+
+			<% total = quantity*lesson.price %>
+
+		</tr>
+
+		<% end %>
+
+		<tr>
+
+			Grand Total: <%= number_to_currency(total, :unit => "€")%>
+
+		</tr>
+
+	</table>
+	<p><a href="/lessons" class="button">Book another course</a></p>
+	<p><a href="/checkout" class="button">Checkout</a></p>
+	<p><a href="/clearcart" class="button">Empty Cart</a></p>
+	<!--<p><a href="/cart/clear" class = "button">Clear Cart</a></p>-->
+
+
+	<% if @cart.empty? %>
+	<h1>Your cart is empty</h1>
+	<% end %>
+
+</div>
+
+
+
+
+

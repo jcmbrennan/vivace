@@ -12,4 +12,8 @@ class Lesson < ApplicationRecord
 	def set_defaults
 		self.image_url ||= "http://placehold.it/350x200"
 	end
+
+	def self.by_position
+		order("position ASC")
+	end
 end 
