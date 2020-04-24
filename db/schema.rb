@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_202647) do
     t.text "description"
     t.integer "quantity"
     t.decimal "price"
-    t.bigint "order_id", null: false
+    t.bigint "order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_orderlessons_on_order_id"

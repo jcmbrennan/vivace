@@ -1,6 +1,8 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update, :destroy]
-
+  layout "orders"
+  
+  access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   # GET /orders
   # GET /orders.json
   def index
@@ -73,6 +75,6 @@ class OrdersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def order_params
-      params.require(:order).permit(:order_date, :user_id, :status)
+      params.require(:order).permit(:order_date, :user_id, :user_name, :status)
     end
 end

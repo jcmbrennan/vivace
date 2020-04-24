@@ -1,5 +1,6 @@
-<div id = "lessonsContainer"><h1> Thank You <br>
-	 Your booking was successful. Please take note of your order reference number below <%=@orderReg.id %> </h1>
+<div id = "lessonsContainer">
+	<h3> Thank You <br>
+	 Your booking was successful. You just placed order no: <%= @orders.id %> </h3>
 
 	 <table id = "customers">
 	 	<tr>
@@ -14,8 +15,8 @@
 	 <table id = "customers"
 	 <% @total = 0 %>
 	 <% @orderlessons.each do |id, quantity| %>
-	 
-		<tr>
+
+	 	<tr>
 	 		<% lesson = Orderlesson.find_by_id(id) %>
 	 		<td><%= lesson.title %></td>
 	 		<td><%= lesson.quantity %></td>
@@ -40,3 +41,28 @@
 		</tr>
 
 	</table>
+
+	
+	<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+	  <!-- Identify your business so that you can collect the payments. -->
+	  <input type="hidden" name="business" value="sb-xfxyx1548893@business.example.com">
+
+	  <!-- Specify a Buy Now button. -->
+	  <input type="hidden" name="cmd" value="_xclick">
+
+	  <!-- Specify details about the item that buyers will purchase. -->
+	  <input type="hidden" name="item_name" value="Vivace Order Number <%= @orders.id %>">
+	  <input type="hidden" name="currency_code" value="EUR">
+	  <input type="hidden" name="amount" value="<%= @total %>">
+
+	  <!-- Display the payment button. -->
+	  <input type="image" name="submit" border="0"
+	  src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now">
+	  <img alt="" border="0" width="1" height="1"
+	  src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+	  <input type="hidden" name="return" value="https://eefc89ca0a734d50a00badc6cabc045a.vfs.cloud9.us-east-1.amazonaws.com/paid/<%= @order.id %>">
+
+	</form>
+
+</div>
