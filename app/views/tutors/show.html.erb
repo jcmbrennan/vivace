@@ -1,7 +1,8 @@
 <div class = "container">
-	<div class = "row">
+	<div class = "row-show">
+		<div class = "row">
 		<div class = "col-md-7">
-			<%= image_tag @tutor.image_url %>
+			<%= image_tag @tutor.image_url.url, width: '100%' %>
 		</div>
 
 		<div class = "col-md-5">
@@ -15,5 +16,6 @@
 			<%=link_to "View all tutors", tutors_path %> 
 			<%= link_to '| Edit', edit_tutor_path(@tutor) if logged_in?(:site_admin)%>
 		</div>
+	</div>
 	</div>
 </div>

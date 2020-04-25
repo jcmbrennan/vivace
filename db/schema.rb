@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_202647) do
+ActiveRecord::Schema.define(version: 2020_04_25_112144) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_202647) do
   create_table "categories", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "image"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_202647) do
     t.text "description"
     t.integer "quantity"
     t.decimal "price"
-    t.bigint "order_id"
+    t.bigint "order_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["order_id"], name: "index_orderlessons_on_order_id"

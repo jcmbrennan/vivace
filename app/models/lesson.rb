@@ -7,6 +7,8 @@ class Lesson < ApplicationRecord
 	extend FriendlyId
 	friendly_id :title, use: :slugged
 
+	mount_uploader :image_url, CourseUploader
+
 	after_initialize :set_defaults
 
 	def set_defaults

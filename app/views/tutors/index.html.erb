@@ -7,7 +7,7 @@
         <% @tutors.each do |tutor| %>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <%= link_to (image_tag tutor.image_url unless tutor.image_url.nil?), tutor %>
+            <%= link_to (image_tag tutor.image_url.url unless tutor.image_url.nil?), tutor %>
             <div class="card-body">
               <p class="card-text">
                 <span><%link_to (tutor.name), tutor%></span><p><%=tutor.name %></p> <p>Courses taught: <%=tutor.category %></p>

@@ -37,6 +37,10 @@
   </div>
 
   <div class="form-group">
+    <%= form.file_field :image_url %>
+  </div>
+
+  <div class="form-group">
     <%= form.label :category_id %>
     <%#= form.text_field :lesson_category %>
     <%= form.text_field :category_id, id: :category_id, :type =>"text", class: 'form-control' %>

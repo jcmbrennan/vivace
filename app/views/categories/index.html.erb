@@ -7,7 +7,7 @@
         <% @categories.each do |category| %>
          <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <%= link_to (image_tag category.image unless category.image.nil?), category %>
+            <%= link_to (image_tag category.image_url.url, width: '100%'), category %>
             <div class="card-body">
               <p class="card-text">
                 <span><%link_to category.title, categories_path(category)%></span><p><%= category.title %></p><p><%= category.description %></p> 
