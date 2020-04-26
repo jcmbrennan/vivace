@@ -21,7 +21,7 @@
         <tr>
             <td>
                 <div class="image">
-                    <%= link_to (image_tag lesson.image_url, :style =>"height:40px"), lesson %>
+                    <%= link_to (image_tag lesson.image_url.url, :style =>"height:100px"), lesson %>
                 </div>
                 
             </td>
@@ -35,26 +35,44 @@
             
         </tr>
         
-
          <% end %>
+         
          <tr>
-            Grand Total: <%= number_to_currency(total, :unit => "€") %>
+            
           </tr>
+          </table>
+           <br>
+           <br>
+           <div class="container">
+            
+            <div class="row">
+                <div class="col-md-12">
+                    Grand Total: <%= number_to_currency(total, :unit => "€") %> 
+                </div>
+            </div>
+            </div>
+        </div>
+            <br>
+            <hr>
+            <br>
+        <div class="container">
+            <div class="row">
+
+
+                <div class="col-md-4">
+                <a href="/lessons" class="btn btn-secondary">Book Another Course</a> 
+                </div>
+
+                <div class="col-md-4">
+                <a href="/checkout" class="btn btn-primary">Checkout</a>
+                </div>
+            
           
-           <tr>
-             <td>
-            <a href="/lessons" class="button">Book Another Course</a> 
-            </td>
-            
+                <div class="col-md-4">
+                <a href="/clearcart" class="btn btn-secondary">Empty Cart</a>
+                </div>
+            </div>
+           </div> 
            
-            <td>
-                <a href="/clearcart" class="button">Empty Cart</a>
-            </td>
-            <td>
-                <a href="/checkout" class="button">Checkout</a>
-            </td>
-            
-          </tr>
-           
-    </table>
+    
 </div>

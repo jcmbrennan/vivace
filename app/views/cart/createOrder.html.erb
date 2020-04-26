@@ -12,17 +12,19 @@
 	 </table>
 
 
-	 <table id = "customers"
+	 <table id = "customers">
 	 <% @total = 0 %>
 	 <% @orderlessons.each do |id, quantity| %>
 
 	 	<tr>
 	 		<% lesson = Orderlesson.find_by_id(id) %>
+	 	
 	 		<td><%= lesson.title %></td>
 	 		<td><%= lesson.quantity %></td>
 	 		<td><%= number_to_currency(lesson.price, :unit => "€") %></td>
 	 		<td><%= number_to_currency(lesson.quantity * lesson.price, :unit => "€") %></td>
-		</tr>
+	 	</tr>
+
 
 
 	 	<tr>
@@ -43,7 +45,7 @@
 	</table>
 	<br>
 
-	
+	<div class = "container">
 	<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
 
 	  <!-- Identify your business so that you can collect the payments. -->
@@ -61,10 +63,10 @@
 	  <input type="image" name="submit" border="0"
 	  src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" alt="Buy Now">
 	  <img alt="" border="0" width="1" height="1"
-	  src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+	  src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
 	  <input type="hidden" name="return" value="https://eefc89ca0a734d50a00badc6cabc045a.vfs.cloud9.us-east-1.amazonaws.com/paid/<%= @order.id %>">
 
 	</form>
-
+	</div>
 </div>
 <br>
