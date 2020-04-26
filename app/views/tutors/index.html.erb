@@ -7,17 +7,17 @@
         <% @tutors.each do |tutor| %>
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <%= link_to (image_tag tutor.image_url.url unless tutor.image_url.nil?), tutor %>
+            <%= link_to (image_tag tutor.image_url.url, width: '100%'), tutor %>
             <div class="card-body">
               <p class="card-text">
                 <span><%link_to (tutor.name), tutor%></span><p><%=tutor.name %></p> <p>Courses taught: <%=tutor.category %></p>
               </p>
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
+                <!--<div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
-                <small class="text-muted"></small>
+                <small class="text-muted"></small>-->
               </div>
             </div>
           </div>

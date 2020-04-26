@@ -23,7 +23,7 @@ class StaticPagesController < ApplicationController
   def categories
     catName = params[:title]
     @lessons = Lesson.where("category like ?", catName) #might need to be changed to ("categories like ?, catName")
-    @page_title = "Book a Lesson"
+    @page_title = "Book a Course"
   end
 
 

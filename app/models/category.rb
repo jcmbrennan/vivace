@@ -5,8 +5,10 @@ class Category < ApplicationRecord
 
 	mount_uploader :image_url, CourseUploader
 
+	
 	extend FriendlyId
-	friendly_id :title, use: :slugged
+	friendly_id :name, use: :slugged
+	
 
 	def self.by_position
 		order("position ASC")

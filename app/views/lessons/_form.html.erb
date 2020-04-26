@@ -42,17 +42,25 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :category_id %>
-    <%#= form.text_field :lesson_category %>
-    <%= form.text_field :category_id, id: :category_id, :type =>"text", class: 'form-control' %>
-  </div>
-
-
-  <div class="form-group">
     <%= form.label :category_name %>
+    <%= form.collection_select(:category_id, Category.all, :id, :title,
+                                {
+                                  selected: @lesson.category_id,
+                                  include_blank: true
+                                },
+                                class: 'form-control'
+                                  )
+      %>
     <%#= form.text_field :lesson_category %>
-    <%= form.text_field :category_name, id: :category_name, :type =>"text", class: 'form-control' %>
+    <!--<%#= form.text_field :category_id, id: :category_id, :type =>"text", class: 'form-control' %>-->
   </div>
+
+
+  <!--<div class="form-group">
+    <%#= form.label :category_name %>
+    <%#= form.text_field :lesson_category %>
+    <%#= form.text_field :category_name, id: :category_name, :type =>"text", class: 'form-control' %>
+  </div>-->
 
   <!--<div class="field">
     <%#= form.label :category_name %>
@@ -78,17 +86,28 @@
     <%= form.text_field :duration, id: :duration, :type =>"text", class: 'form-control' %>
   </div>
 
-   <div class="form-group">
-    <%= form.label :tutor_id %>
+  <div class="form-group">
+    <%= form.label :tutor_name %>
+    <%= form.collection_select(:tutor_id, Tutor.all, :id, :name,
+                                {
+                                  selected: @lesson.tutor_id,
+                                  include_blank: true
+                                },
+                                class: 'form-control'
+                                  )
+      %>
+
+   <!--<div class="form-group">
+    <%#= form.label :tutor_id %>
    
-    <%= form.text_field :tutor_id, id: :tutor_id, :type =>"text", class: 'form-control' %>
+    <%#= form.text_field :tutor_id, id: :tutor_id, :type =>"text", class: 'form-control' %>
   </div>
 
    <div class="form-group">
-    <%= form.label :tutor_name %>
+    <%#= form.label :tutor_name %>
    
-    <%= form.text_field :tutor_name, id: :tutor_name, :type =>"text", class: 'form-control' %>
-  </div>
+    <%#= form.text_field :tutor_name, id: :tutor_name, :type =>"text", class: 'form-control' %>
+  </div>-->
 
 <!--The following might be swapped with the tutor name field above to make it dynamically pick a tutor name-->
   <!--<ul>

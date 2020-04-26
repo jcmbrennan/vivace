@@ -10,14 +10,14 @@
             <%= link_to (image_tag category.image_url.url, width: '100%'), category %>
             <div class="card-body">
               <p class="card-text">
-                <span><%link_to category.title, categories_path(category)%></span><p><%= category.title %></p><p><%= category.description %></p> 
+                <span><%link_to category.title, lessons_path(category)%></span><p><%= category.title %></p><p><%= category.description %></p> 
               </p>
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
+                <!--<div class="btn-group">
                   <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
                   <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                 </div>
-                <small class="text-muted"></small>
+                <small class="text-muted"></small>-->
               </div>
             </div>
           </div>
