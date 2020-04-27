@@ -15,7 +15,7 @@ require "action_cable/engine"
 require "sprockets/railtie"
 require "dotenv/rails"
 # require "rails/test_unit/railtie"
-config.assets.initialize_on_precompile = false
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -32,5 +32,6 @@ module Vivace
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+    config.assets.initialize_on_precompile = false
   end
 end
