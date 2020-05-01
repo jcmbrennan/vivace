@@ -4,7 +4,6 @@
 //or the 'imagePath' JavaScript helper below.
 
 //import all image files in a folder:
-require.context('../images', true)
 
-const images = require.context('../images', true)
-const imagePath = (name) => images(name, true)
+//const images = require.context('../images', true)
+//const imagePath = (name) => images(name, true)
