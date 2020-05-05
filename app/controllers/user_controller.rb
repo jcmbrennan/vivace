@@ -1,4 +1,4 @@
-#class UserController < ApplicationController
+class UserController < ApplicationController
 
 	#def login
 	#	session[:login] = 1
@@ -13,4 +13,4 @@
 	#	flash[:notice] = "You have now logged out"
 	#	redirect_to :controller => :lessons
 	#end	
-#
+end
