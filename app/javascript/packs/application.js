@@ -5,7 +5,6 @@
 
 require("@rails/ujs").start()
 require ("jquery-ui")
-require("html.sortable")
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
