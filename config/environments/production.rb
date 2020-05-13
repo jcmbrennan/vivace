@@ -91,6 +91,9 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  config.action_cable.allowed_request_origins = ['https://heroku-vivace.herokuapp.com/', 'http://heroku-vivace.herokuapp.com']
+  config.action_cable.url = "wss://heroku-vivace.herokuapp.com/cable"
+
   # Inserts middleware to perform automatic connection switching.
   # The `database_selector` hash is used to pass options to the DatabaseSelector
   # middleware. The `delay` is used to determine how long to wait after a write
